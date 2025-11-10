@@ -1,0 +1,20 @@
+<div>
+  <h1>Excel File Upload with Chunking</h1>
+</div>
+<div class="upload-container">
+  <h2>📤 Upload Excel File (in Chunks)</h2>
+
+  <input type="file" accept=".xlsx, .xls" (change)="onFileChange($event)" />
+
+  <div *ngIf="file">
+    <p><b>File:</b> {{ file.name }}</p>
+    <p><b>Total Chunks:</b> {{ totalChunks }}</p>
+    <button (click)="uploadInChunks()" [disabled]="isUploading">Start Upload</button>
+  </div>
+
+  <div *ngIf="isUploading" class="progress-container">
+    <p>Uploading {{ uploadedChunks }} / {{ totalChunks }} chunks...</p>
+    <progress [value]="uploadProgress" max="100"></progress>
+    <span>{{ uploadProgress }}%</span>
+  </div>
+</div>

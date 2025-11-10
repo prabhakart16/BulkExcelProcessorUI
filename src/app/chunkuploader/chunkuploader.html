@@ -1,0 +1,7 @@
+<div>
+  <h3>Chunked Excel Uploader (Demo)</h3>
+  <input type="file" (change)="onFileChange($event)" />
+  <button (click)="startUpload()" [disabled]="uploading">Start Upload</button>
+  <div *ngIf="uploading">Uploading...</div>
+  <div *ngIf="batchId">Batch ID: {{batchId}}</div>
+</div>
