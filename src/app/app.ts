@@ -6,7 +6,7 @@ import { Chunkuploader } from './chunkuploader/chunkuploader';
 
 @Component({
   selector: 'app-root',
-  imports: [Chunkuploader],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
